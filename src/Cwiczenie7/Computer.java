@@ -1,13 +1,14 @@
 package Cwiczenie7;
 
 // Cwiczenie dziedziczenia miedzy klasa matka Computer i dziecmi PC i Laptop
-public class Computer {
+abstract public class Computer {
     // Pola zdefiniowane i uzywane przez dziedziczone klasy MUSZA być protected nie privated
     protected String name;
     protected String type;
     protected int hdd;
     protected int ram;
     protected boolean state;
+    protected int volumeLevel;
 
     public Computer(String name, String type, int hdd, int ram) {
         this.name = name;
@@ -15,6 +16,7 @@ public class Computer {
         this.hdd = hdd;
         this.ram = ram;
         this.state = false;
+        this.volumeLevel = 0;
     }
 
     public String getName() {
@@ -68,4 +70,7 @@ public class Computer {
     public boolean getState(){
         return state;
     }
+
+    public abstract int volumeUp(int value);
+    public abstract int volumeDown(int value);
 }

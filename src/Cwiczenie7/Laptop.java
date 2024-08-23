@@ -22,7 +22,34 @@ public class Laptop extends Computer{
         }
     }
 
+    @Override
+    public int volumeUp(int value) {
+        this.volumeLevel += value;
+        if (100 <= this.volumeLevel) {
+            return 100;
+        } if (this.volumeLevel <=0) {
+            return 0;
+        }
+        else {
+            return this.volumeLevel;
+        }
+    }
+
+    @Override
+    public int volumeDown(int value) {
+        this.volumeLevel -= value;
+        if (100 <= this.volumeLevel) {
+            return 100;
+        } if (this.volumeLevel <=0) {
+            return 0;
+        }
+        else {
+            return this.volumeLevel;
+        }
+    }
+
     public void setBatteryLevel(int newBatteryLevel){
         batteryLevel = newBatteryLevel;
     }
+
 }
